@@ -3,8 +3,8 @@ import "./index.css";
 
 const images = [
   "/Bougainvillea.webp",
-  "/Bougainvillea_2.png",
-  "/Bougainvillea_3.png",
+  "/Bougainvillea_2.webp",
+  "/Bougainvillea_3.webp",
 ];
 
 function App() {
