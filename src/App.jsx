@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 
 const images = [
@@ -9,6 +9,14 @@ const images = [
 
 function App() {
   const [index, setIndex] = useState(0);
+
+  // Preload images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const handleClick = () => {
     setIndex((prevIndex) => (prevIndex + 1) % images.length);
