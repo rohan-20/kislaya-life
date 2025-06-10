@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 
 const images = [
   "/Bougainvillea.webp",
@@ -14,61 +15,22 @@ function App() {
   };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#ffffff",
-      }}
-    >
+    <div className="h-screen w-screen flex justify-center items-center bg-white overflow-hidden">
       <div
         onClick={handleClick}
-        style={{
-          width: "50vw",
-          height: "50vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "white",
-          cursor: "pointer",
-          transition: "all 0.3s ease",
-          userSelect: "none",
-          WebkitUserSelect: "none",
-          MozUserSelect: "none",
-          msUserSelect: "none",
-          WebkitTapHighlightColor: "transparent",
-        }}
+        className={`
+          flex justify-center items-center bg-white cursor-pointer
+          select-none transition-all duration-300
+          w-[100vw] h-[100vh]
+          sm:w-[50vw] sm:h-[50vh]
+        `}
       >
         <img
           src={images[index]}
           alt={`Frame ${index + 1}`}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            objectFit: "contain",
-            transition: "opacity 0.2s ease",
-            userSelect: "none",
-            WebkitUserSelect: "none",
-            MozUserSelect: "none",
-            msUserSelect: "none",
-            pointerEvents: "none",
-          }}
+          className="max-w-full max-h-full object-contain transition-opacity duration-200 pointer-events-none select-none"
         />
       </div>
-
-      <style>
-        {`
-          @media (max-width: 768px) {
-            div[style*="width: 50vw"] {
-              width: 80vw !important;
-              height: 60vh !important;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }
